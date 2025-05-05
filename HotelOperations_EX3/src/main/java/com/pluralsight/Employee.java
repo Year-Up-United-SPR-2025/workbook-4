@@ -82,4 +82,7 @@ public class Employee {
     public String getName() {
         return name;
     }
+
+    public void punchTimeCard(double time) {
+    }
 }
