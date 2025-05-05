@@ -68,5 +68,45 @@ public class Main {
             System.out.println("0. Exit");
             System.out.print("Choose an option: ");
 
+            String input = scanner.next();
+            switch (input) {
+                case "1":
+                    room.checkIn();
+                    break;
+                case "2":
+                    room.checkIn();
+                    break;
+                case "3":
+                    room.cleanRoom();
+                    break;
+                case "4":
+                    System.out.println("Enter Time (ex 9.0 for 9:00 AM): \n");
+                    try {
+                        double time = Double.parseDouble(scanner.next());
+                        employee.punchTimeCard(time);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid Time Format Try Again");
+                    }
+                    break;
+                case "5":
+                    System.out.println("Room occupied: " + room.isOccupied());
+                    System.out.println("Room dirty: " + room.isDirty());
+                    System.out.println("Room availability: " + room.getAvailabilityStatus());
+                    break;
+                case "6":
+                    System.out.println("Employee: " + employee.getName());
+                    System.out.println("Hours worked: " + employee.getHoursWorked());
+                    System.out.printf("Total pay: $%.2f%n", employee.getTotalPay());
+                    break;
+                case "0":
+                    running = false;
+                    System.out.println("Exiting system.");
+                    break;
+                default:
+                    System.out.println("Invalid option. Try again.");
+            }
+        }
+
+        scanner.close();
     }
 }
