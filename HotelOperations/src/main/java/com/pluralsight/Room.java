@@ -12,37 +12,40 @@ package com.pluralsight;
 //isAvailable()
 
 public class Room {
-    public int getNumberOfBeads;
-    public double getPrice;
-    public String isOccupied;
-    public String isDirty;
-    public String isAvailable;
+    private int numberOfBeds;
+    private double price;
+    private boolean occupied;
+    private boolean dirty;
 
-    public Room(int getNumberOfBeads, double getPrice, String isOccupied, String isDirty, String isAvailable) {
-        this.getNumberOfBeads = getNumberOfBeads;
-        this.getPrice = getPrice;
-        this.isOccupied = isOccupied;
-        this.isDirty = isDirty;
-        this.isAvailable = isAvailable;
+    public Room(int numberOfBeds, double price, boolean occupied, boolean dirty) {
+        this.numberOfBeds = numberOfBeds;
+        this.price = price;
+        this.occupied = occupied;
+        this.dirty = dirty;
     }
 
-    public int getGetNumberOfBeads() {
-        return getNumberOfBeads;
+    public int getNumberOfBeds() {
+        return numberOfBeds;
     }
 
-    public double getGetPrice() {
-        return getPrice;
+    public double getPrice() {
+        return price;
     }
 
-    public String getIsOccupied() {
-        return isOccupied;
+    public boolean isOccupied() {
+        return occupied;
     }
 
-    public String getIsDirty() {
-        return isDirty;
+    public boolean isDirty() {
+        return dirty;
     }
 
-    public String getIsAvailable() {
-        return isAvailable;
+    public boolean isAvailable() {
+        return !occupied && !dirty;
+    }
+
+    // Derived string status for display
+    public String getAvailabilityStatus() {
+        return isAvailable() ? "Available" : "Not Available";
     }
 }
