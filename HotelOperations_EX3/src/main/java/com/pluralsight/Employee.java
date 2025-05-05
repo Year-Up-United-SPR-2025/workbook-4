@@ -10,13 +10,16 @@ package com.pluralsight;
 //getOvertimeHours
 
 
+import java.time.LocalDateTime;
+
 public class Employee {
     private int employeeId;
     private String name;
     private String department;
     private double payRate;
     private double hoursWorked;
-    private Double startTime = null; // using object type to track punch-in
+
+    private Double punchInTime = null;
 
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -26,51 +29,57 @@ public class Employee {
         this.hoursWorked = hoursWorked;
     }
 
-    public void punchTimeCard(double time) {
-        if (startTime == null) {
-            startTime = time;
-            System.out.println(name + " punched in at " + time);
-        } else {
-            if (time < startTime) {
-                System.out.println("Error: Punch-out time cannot be before punch-in.");
-                return;
-            }
-            double worked = time - startTime;
-            hoursWorked += worked;
-            System.out.printf("%s punched out at %.2f. Hours worked: %.2f%n", name, time, worked);
-            startTime = null;
+    public void punchIn(double time) {
+        punchInTime = time;
+        System.out.printf("%s punched in at %.2f\n", name, time);
+    }
+
+    public void punchIn() {
+        LocalDateTime now = LocalDateTime.now();
+        punchIn(getDecimalTime(now));
+    }
+
+    public void punchOut(double time) {
+        if (punchInTime == null) {
+            System.out.println("Error: Must punch in first.");
+            return;
         }
+        double worked = time - punchInTime;
+        if (worked < 0) {
+            System.out.println("Invalid time (punch out before punch in).");
+            return;
+        }
+        hoursWorked += worked;
+        System.out.printf("%s punched out at %.2f (%.2f hours worked)\n", name, time, worked);
+        punchInTime = null;
+    }
+
+    public void punchOut() {
+        LocalDateTime now = LocalDateTime.now();
+        punchOut(getDecimalTime(now));
+    }
+
+    private double getDecimalTime(LocalDateTime dateTime) {
+        return dateTime.getHour() + dateTime.getMinute() / 60.0;
+    }
+
+    public double getHoursWorked() {
+        return hoursWorked;
     }
 
     public double getRegularHours() {
-        return Math.min(40, hoursWorked);
+        return Math.min(40.0, hoursWorked);
     }
 
     public double getOvertimeHours() {
-        return Math.max(0, hoursWorked - 40);
+        return Math.max(0.0, hoursWorked - 40.0);
     }
 
     public double getTotalPay() {
         return (getRegularHours() * payRate) + (getOvertimeHours() * payRate * 1.5);
     }
 
-    public int getEmployeeId() {
-        return employeeId;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public double getPayRate() {
-        return payRate;
-    }
-
-    public double getHoursWorked() {
-        return hoursWorked;
     }
 }
