@@ -55,10 +55,18 @@ public class Main {
         double hoursWorked = scanner.nextDouble();
 
         Employee employee = new Employee(empId, name, department, payRate, hoursWorked);
-        System.out.printf("Total pay: $%.2f%n", employee.getTotalPay());
-        System.out.printf("Regular hours: %.2f%n", employee.getRegularHours());
-        System.out.printf("Overtime hours: %.2f%n", employee.getOvertimeHours());
+        //Menu
+        boolean running = true;
+        while (running) {
+            System.out.println("\n---- Hotel Operations Menu ----");
+            System.out.println("1. Check into room");
+            System.out.println("2. Check out of room");
+            System.out.println("3. Clean room");
+            System.out.println("4. Punch employee time card");
+            System.out.println("5. Show room status");
+            System.out.println("6. Show employee info");
+            System.out.println("0. Exit");
+            System.out.print("Choose an option: ");
 
-        scanner.close();
     }
 }
