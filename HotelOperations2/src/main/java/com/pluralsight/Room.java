@@ -44,8 +44,35 @@ public class Room {
         return !occupied && !dirty;
     }
 
-    // Derived string status for display
     public String getAvailabilityStatus() {
         return isAvailable() ? "Available" : "Not Available";
+    }
+
+    public void checkIn() {
+        if (!isAvailable()) {
+            System.out.println("Room is not available for check-in.");
+            return;
+        }
+        occupied = true;
+        dirty = true;
+        System.out.println("Guest has checked in. Room is now occupied and dirty.");
+    }
+
+    public void checkOut() {
+        if (!occupied) {
+            System.out.println("Room is not currently occupied.");
+            return;
+        }
+        occupied = false;
+        System.out.println("Guest has checked out. Room is dirty and needs to be cleaned.");
+    }
+
+    public void cleanRoom() {
+        if (!dirty) {
+            System.out.println("Room is already clean.");
+        } else {
+            dirty = false;
+            System.out.println("Room has been cleaned and is ready for new guests.");
+        }
     }
 }

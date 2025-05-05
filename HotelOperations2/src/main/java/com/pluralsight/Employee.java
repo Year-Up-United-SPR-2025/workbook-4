@@ -16,6 +16,7 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
+    private Double startTime = null; // using object type to track punch-in
 
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -23,6 +24,22 @@ public class Employee {
         this.department = department;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
+    }
+
+    public void punchTimeCard(double time) {
+        if (startTime == null) {
+            startTime = time;
+            System.out.println(name + " punched in at " + time);
+        } else {
+            if (time < startTime) {
+                System.out.println("Error: Punch-out time cannot be before punch-in.");
+                return;
+            }
+            double worked = time - startTime;
+            hoursWorked += worked;
+            System.out.printf("%s punched out at %.2f. Hours worked: %.2f%n", name, time, worked);
+            startTime = null;
+        }
     }
 
     public double getRegularHours() {
