@@ -79,20 +79,20 @@ public class Main {
                 case "3":
                     room.cleanRoom();
                     break;
-                case "4":
+                case  "4":
                     System.out.println("Enter Time (ex 9.0 for 9:00 AM): \n");
                     try {
                         double time = Double.parseDouble(scanner.next());
                         employee.punchTimeCard(time);
-                    } catch (NumberFormatException e) {
+                    }catch (NumberFormatException e){
                         System.out.println("Invalid Time Format Try Again");
                     }
                     break;
                 case "5":
-                    System.out.println("Room occupied: " + room.isOccupied());
-                    System.out.println("Room dirty: " + room.isDirty());
-                    System.out.println("Room availability: " + room.getAvailabilityStatus());
-                    break;
+                System.out.println("Room occupied: " + room.isOccupied());
+                System.out.println("Room dirty: " + room.isDirty());
+                System.out.println("Room availability: " + room.getAvailabilityStatus());
+                break;
                 case "6":
                     System.out.println("Employee: " + employee.getName());
                     System.out.println("Hours worked: " + employee.getHoursWorked());
