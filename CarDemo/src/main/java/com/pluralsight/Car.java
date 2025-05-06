@@ -41,10 +41,11 @@ public class Car {
     }
 
     public void brake(int changeInSpeed) {
-        if (changeInSpeed > this.speed) {
-            this.speed = 0;
-        } else {
-            this.speed -= changeInSpeed;
-        }
+//        if (changeInSpeed > this.speed) {
+//            this.speed = 0;
+//        } else {
+//            this.speed -= changeInSpeed;
+//        }
+        this.speed -= changeInSpeed;
     }
 }
