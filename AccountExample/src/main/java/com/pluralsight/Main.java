@@ -9,10 +9,5 @@ public class Main {
 
         BankAccount acct1 = new BankAccount("109","Bob", 745.00);
         BankAccount acct2 = new BankAccount("45","Susan", 1000.00);
-
-        String name = "Michael";
-        String.format("Hello %s", name);
-        int age = Integer.parseInt("35");
-        double price = Double.parseDouble("15.95");
     }
 }
