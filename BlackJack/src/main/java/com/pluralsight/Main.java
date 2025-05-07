@@ -29,10 +29,15 @@ public class Main {
 
         System.out.println("-------------------------------");
         System.out.println("Value:" + h1.getValue()); //all the card values together
-
     }
 
-    public static void display(Card c) {
-        System.out.println(c.getValue() + " " + c.getSuit());
+    public static void display(Card c){
+        if(c.getSuit().equalsIgnoreCase("Hearts") || c.getSuit().equalsIgnoreCase("Diamonds") ){
+            System.out.println(ColorCodes.RED + c.getValue() + " " + c.getSuit() + ColorCodes.RESET );
+        }
+        else{
+            System.out.println(c.getValue() + " " + c.getSuit());
+        }
+
     }
 }
