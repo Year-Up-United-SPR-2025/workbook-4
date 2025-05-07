@@ -22,7 +22,7 @@ public class Card {
 
     public String getValue() {
         if (isfaceUp) {
-            return this.suit;
+            return this.value;
         } else {
             return "#";
         }
