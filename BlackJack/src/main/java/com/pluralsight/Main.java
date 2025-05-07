@@ -32,8 +32,14 @@ public class Main {
     }
 
     public static void display(Card c) {
-        if (c.getSuit().equalsIgnoreCase("Hearts") || c.getSuit().equalsIgnoreCase("Diamonds")) {
+        if (c.getSuit().equalsIgnoreCase("Hearts")) {
             System.out.println(ColorCodes.RED + c.getValue() + " " + c.getSuit() + ColorCodes.RESET);
+        } else if (c.getSuit().equalsIgnoreCase("Diamonds")) {
+            System.out.println(ColorCodes.YELLOW + c.getValue() + " " + c.getSuit() + ColorCodes.RESET);
+        } else if (c.getSuit().equalsIgnoreCase("Clubs")) {
+            System.out.println(ColorCodes.GREEN + c.getValue() + " " + c.getSuit() + ColorCodes.RESET);
+        } else if (c.getSuit().equalsIgnoreCase("Spades")) {
+            System.out.println(ColorCodes.BLUE + c.getValue() + " " + c.getSuit() + ColorCodes.RESET);
         } else {
             System.out.println(c.getValue() + " " + c.getSuit());
         }
