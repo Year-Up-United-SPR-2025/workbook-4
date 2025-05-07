@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+//Card doesn't depend on the Hand Class
 public class Card {
     private String suit;
     private String value;
