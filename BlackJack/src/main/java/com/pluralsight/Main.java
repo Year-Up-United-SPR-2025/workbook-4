@@ -1,8 +1,19 @@
 package com.pluralsight;
 
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How many people are playing today (maximum 2):\n");
+        scanner.nextLine();
+        System.out.println("Player One what is your name?:\n");
+        scanner.nextLine();
+        System.out.println("Player two what is your name?:\n");
+        scanner.nextLine();
+
 
         Deck d = new Deck();
         d.shuffle(); //shuffles the cards
@@ -37,7 +48,7 @@ public class Main {
         } else if (c.getSuit().equalsIgnoreCase("Diamonds")) {
             System.out.println(ColorCodes.YELLOW + c.getValue() + " " + c.getSuit() + ColorCodes.RESET);
         } else if (c.getSuit().equalsIgnoreCase("Clubs")) {
-            System.out.println(ColorCodes.GREEN + c.getValue() + " " + c.getSuit() + ColorCodes.RESET);
+            System.out.println(ColorCodes.PURPLE + c.getValue() + " " + c.getSuit() + ColorCodes.RESET);
         } else if (c.getSuit().equalsIgnoreCase("Spades")) {
             System.out.println(ColorCodes.BLUE + c.getValue() + " " + c.getSuit() + ColorCodes.RESET);
         } else {
