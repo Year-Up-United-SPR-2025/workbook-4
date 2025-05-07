@@ -11,6 +11,8 @@ public class Hand {
         cards = new ArrayList<Card>();
     }
 
+    //uses a random without using the random class
+    //because it's taking the top card at first
     public void deal(Card card) {
         this.cards.add(card);
     }
