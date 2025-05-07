@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Deck d = new Deck();
-        d.shuffle(); //shuffles the cards 
+        d.shuffle(); //shuffles the cards
 
         Hand h1 = new Hand();
 
@@ -13,8 +13,26 @@ public class Main {
 
         c1.flip(); //makes sure it's not filled down
 
-        System.out.println(c1.getSuit());
-        System.out.println(c1.getValue()); //returns face down
+//        System.out.println(c1.getSuit());
+//        System.out.println(c1.getValue()); //returns face down
+        display(c1);
+        System.out.println(c1.getPointValue()); //shows how much the card is worth
 
+        Card c2 = d.deal();
+        c2.flip();
+
+        display(c2);
+        System.out.println(c2.getPointValue()); //shows how much the card is worth
+
+        h1.deal(c1);
+        h1.deal(c2);
+
+        System.out.println("-------------------------------");
+        System.out.println("Value:" + h1.getValue()); //all the card values together
+
+    }
+
+    public static void display(Card c) {
+        System.out.println(c.getValue() + " " + c.getSuit());
     }
 }
