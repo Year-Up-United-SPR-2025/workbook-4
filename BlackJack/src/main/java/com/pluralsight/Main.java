@@ -6,13 +6,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("How many people are playing today (maximum 2):\n");
-        scanner.nextLine();
-        System.out.println("Player One what is your name?:\n");
-        scanner.nextLine();
-        System.out.println("Player two what is your name?:\n");
-        scanner.nextLine();
+        Scanner playerScanner = new Scanner(System.in);
+
+        //--- Welcome to the BLackJack Game
+        System.out.println("Welcome to the Game of Blackjack");
+
+        // --- Player 1 ---(True Player)
+        System.out.print("Enter name for Player 1: ");
+        String player1Name = playerScanner.nextLine();
+
+        // --- Player 2 ---(The House)
+        System.out.print("Enter name for Player 2: ");
+        String player2Name = playerScanner.nextLine();
+
+        // --- Print the player names ---
+        System.out.println("\n--- Player Details ---"); //
+        System.out.println("Player 1: " + player1Name);
+        System.out.println("Player 2: " + player2Name);
 
 
         Deck d = new Deck();
