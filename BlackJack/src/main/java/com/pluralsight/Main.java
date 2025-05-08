@@ -14,6 +14,7 @@ public class Main {
         // --- Player 1 ---(True Player YOU)
         System.out.print("Enter name for Player 1 (You): ");
         String player1Name = playerScanner.nextLine();
+        System.out.println("--------------------------------");
 
         // --- Player 2 ---(The House)
         System.out.print("Enter name for Player 2 (The House): ");
@@ -44,7 +45,9 @@ public class Main {
         h1.deal(c1);
         h1.deal(c2);
 
+        System.out.println("P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1");
         System.out.println(player1Name + " Hand Value: " + h1.getValue());
+        System.out.println("P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1");
 
         // -------------------- Player 2 (The House)
         Deck d2 = new Deck();
@@ -65,14 +68,16 @@ public class Main {
         h2.deal(c3);
         h2.deal(c4);
 
+        System.out.println("P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2");
         System.out.println(player2Name + " Hand Value: " + h2.getValue());
+        System.out.println("P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2");
 
         // -------------------- Result --------------------
         System.out.println("-------------------------------");
         if (h1.getValue() > h2.getValue()) {
-            System.out.println(player1Name + " wins!");
+            System.out.println("P1 " + player1Name + " wins!");
         } else if (h1.getValue() < h2.getValue()) {
-            System.out.println(player2Name + " wins!");
+            System.out.println("P2 " + player2Name + " wins!");
         } else {
             System.out.println("It's a tie!");
         }
