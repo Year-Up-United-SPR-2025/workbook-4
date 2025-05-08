@@ -12,17 +12,17 @@ public class Main {
         System.out.println("Welcome to the Game of Blackjack");
 
         // --- Player 1 ---(True Player YOU)
-        System.out.print("Enter name for Player 1: ");
+        System.out.print("Enter name for Player 1 (You): ");
         String player1Name = playerScanner.nextLine();
 
         // --- Player 2 ---(The House)
-        System.out.print("Enter name for Player 2: ");
+        System.out.print("Enter name for Player 2 (The House): ");
         String player2Name = playerScanner.nextLine();
 
         // --- Print the player names ---
         System.out.println("\n--- Player Details ---"); //
-        System.out.println("Player 1: " + player1Name);
-        System.out.println("Player 2: " + player2Name);
+        System.out.println("Player 1 (You): " + player1Name);
+        System.out.println("Player 2 (The House): " + player2Name);
 
 
         // -------------------- Player 1(You)
