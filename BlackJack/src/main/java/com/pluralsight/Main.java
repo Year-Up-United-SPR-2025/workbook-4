@@ -45,9 +45,9 @@ public class Main {
         h1.deal(c1);
         h1.deal(c2);
 
-        System.out.println("P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1");
+        System.out.println("\nP1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1");
         System.out.println(player1Name + " Hand Value: " + h1.getValue());
-        System.out.println("P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1");
+        System.out.println("P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1P1\n");
 
         // -------------------- Player 2 (The House)
         Deck d2 = new Deck();
@@ -68,9 +68,9 @@ public class Main {
         h2.deal(c3);
         h2.deal(c4);
 
-        System.out.println("P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2");
+        System.out.println("\nP2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2");
         System.out.println(player2Name + " Hand Value: " + h2.getValue());
-        System.out.println("P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2");
+        System.out.println("P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2\n");
 
         // -------------------- Result --------------------
         System.out.println("-------------------------------");
