@@ -11,7 +11,7 @@ public class Main {
         //--- Welcome to the BLackJack Game
         System.out.println("Welcome to the Game of Blackjack");
 
-        // --- Player 1 ---(True Player)
+        // --- Player 1 ---(True Player YOU)
         System.out.print("Enter name for Player 1: ");
         String player1Name = playerScanner.nextLine();
 
@@ -25,31 +25,57 @@ public class Main {
         System.out.println("Player 2: " + player2Name);
 
 
+        // -------------------- Player 1(You)
         Deck d = new Deck();
         d.shuffle(); //shuffles the cards
 
         Hand h1 = new Hand();
 
         Card c1 = d.deal();
-
-        c1.flip(); //makes sure it's not filled down
-
-//        System.out.println(c1.getSuit());
-//        System.out.println(c1.getValue()); //returns face down
+        c1.flip(); //flip card 1
         display(c1);
-        System.out.println(c1.getPointValue()); //shows how much the card is worth
+        System.out.println(c1.getPointValue());
 
         Card c2 = d.deal();
-        c2.flip();
-
+        c2.flip(); //flip card 2
         display(c2);
-        System.out.println(c2.getPointValue()); //shows how much the card is worth
+        System.out.println(c2.getPointValue());
 
         h1.deal(c1);
         h1.deal(c2);
 
+        System.out.println(player1Name + " Hand Value: " + h1.getValue());
+
+        // -------------------- Player 2 (The House)
+        Deck d2 = new Deck();
+        d2.shuffle(); //shuffles the cards
+
+        Hand h2 = new Hand();
+
+        Card c3 = d2.deal();
+        c3.flip(); //flip card 1 for player 2
+        display(c3);
+        System.out.println(c3.getPointValue());
+
+        Card c4 = d2.deal();
+        c4.flip(); //flip card 2 for player 2
+        display(c4);
+        System.out.println(c4.getPointValue());
+
+        h2.deal(c3);
+        h2.deal(c4);
+
+        System.out.println(player2Name + " Hand Value: " + h2.getValue());
+
+        // -------------------- Result --------------------
         System.out.println("-------------------------------");
-        System.out.println("Value:" + h1.getValue()); //all the card values together
+        if (h1.getValue() > h2.getValue()) {
+            System.out.println(player1Name + " wins!");
+        } else if (h1.getValue() < h2.getValue()) {
+            System.out.println(player2Name + " wins!");
+        } else {
+            System.out.println("It's a tie!");
+        }
     }
 
     public static void display(Card c) {
